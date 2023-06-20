@@ -18,6 +18,7 @@ album_repository.save(album_1)
 
 album_2 = Album("Mellon Collie and the Infinite Sadness", "Alternative rock", artist_1)
 album_repository.save(album_2)
+album_repository.delete(album_2.id)
 
 album_3 = Album("Rumours", "Pop rock", artist_2)
 album_repository.save(album_3)
@@ -35,5 +36,9 @@ print(album.__dict__)
 
 artist = artist_repository.select(artist_2.id)
 print(artist.__dict__)
+
+albums_by_artist = album_repository.select_by_artist(artist_2)
+for album in albums_by_artist:
+    print(album.__dict__)
 
 pdb.set_trace()

@@ -4,8 +4,8 @@ from models.artist import Artist
 import repositories.album_repository as album_repository
 import repositories.artist_repository as artist_repository
 
-# album_repository.delete_all()
-# artist_repository.delete_all()
+album_repository.delete_all()
+artist_repository.delete_all()
 
 artist_1 = Artist("The Smashing Pumpkins")
 artist_repository.save(artist_1)
@@ -22,12 +22,18 @@ album_repository.save(album_2)
 album_3 = Album("Rumours", "Pop rock", artist_2)
 album_repository.save(album_3)
 
-# album_repository.find(album_1.id)
+all_albums = album_repository.select_all()
+for album in all_albums:
+    print(album.__dict__)
 
-# artist_repository.find(artist_2.id)
+all_artists = artist_repository.select_all()
+for artist in all_artists:
+    print(artist.__dict__)
 
-# album_repository.select_all()
+album = album_repository.select(album_1.id)
+print(album.__dict__)
 
-# artist_repository.select_all()
+artist = artist_repository.select(artist_2.id)
+print(artist.__dict__)
 
 pdb.set_trace()

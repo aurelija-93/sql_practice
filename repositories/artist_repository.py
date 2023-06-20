@@ -18,7 +18,7 @@ def select_all():
     sql = "SELECT * FROM artists"
     results = run_sql(sql)
 
-    for row in artists:
+    for row in results:
         artist = Artist(row['name'], row['id'])
         artists.append(artist)
     return artists

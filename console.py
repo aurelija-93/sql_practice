@@ -13,13 +13,13 @@ artist_repository.save(artist_1)
 artist_2 = Artist("Fleetwood Mac")
 artist_repository.save(artist_2)
 
-album_1 = Album("Siamese Dream", "Alternative rock", "The Smashing Pumpkins")
+album_1 = Album("Siamese Dream", "Alternative rock", artist_1)
 album_repository.save(album_1)
 
-album_2 = Album("Mellon Collie and the Infinite Sadness", "Alternative rock", "The Smashing Pumpkins")
+album_2 = Album("Mellon Collie and the Infinite Sadness", "Alternative rock", artist_1)
 album_repository.save(album_2)
 
-album_3 = Album("Rumours", "Pop rock", "Fleetwood Mac")
+album_3 = Album("Rumours", "Pop rock", artist_2)
 album_repository.save(album_3)
 
 # album_repository.find(album_1.id)
